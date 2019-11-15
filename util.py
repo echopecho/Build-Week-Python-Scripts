@@ -1,5 +1,11 @@
 import requests
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+key = os.getenv("KEY")
 
 
 class Queue:
@@ -38,7 +44,8 @@ class Stack:
 
 base_url = "https://lambda-treasure-hunt.herokuapp.com/api/adv/"
 
-auth_header = {"Authorization": "Token 724b204984aee234274039fae647bc65240d399e"}
+
+auth_header = {"Authorization": f"Token {key}"}
 
 reverse = {"n": "s", "s": "n", "e": "w", "w": "e"}
 
